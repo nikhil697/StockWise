@@ -491,7 +491,6 @@ import yfinance as yf
 
     
     
-openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
 # def viewvalues(request):
 #     context = {}
 
@@ -693,9 +692,6 @@ def viewvalues(request):
         prompt += f"Net Income: {company.info.get('netIncomeToCommon', 'N/A')}\n"
         prompt += f"Dividend Yield: {dividendYield}\n"
 
-        # Define the Gemini API key and endpoint
-        # API_KEY = "AIzaSyDuu2hb3BjBYuPAAfSmBRQADGAceCPCKQY"
-        # url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={API_KEY}"
 
         # payload = {
         #     "contents": [
