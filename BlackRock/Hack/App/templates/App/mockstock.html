@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Stock Trading Platform</title>
+    <link rel="stylesheet" href="/static/css/mockstock.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>My Portfolio</h1>
+    </div>
+    <div class="container">
+        <div class="portfolio">
+            <div class="portfolio-header">
+                <span>Company</span>
+                <span>Bought Price</span>
+                <span>Current Price</span>
+                <span>Quantity</span>
+            </div>
+            <div id="portfolio-companies"></div>
+        </div>
+    </div>
+    <div class="portfolio-value">
+        <div class="value-box">
+            <p>Invested Amount</p>
+            <span id="invested-amount">₹0.00</span>
+        </div>
+        <div class="value-box">
+            <p>Current Value</p>
+            <span id="current-value">₹0.00</span>
+        </div>
+        <div class="value-box">
+            <p>Amount Left</p>
+            <span id="amount-left">₹500,000.00</span>
+        </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for a stock...">
+        <button onclick="searchStock()">Search</button>
+    </div>
+    <div class="stock-details" id="stock-details"></div>
+    <script src="/static/js/mockstock.js"></script>
+</body>
+
+</html>

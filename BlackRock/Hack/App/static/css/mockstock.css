@@ -1,0 +1,175 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background-color: #512da8;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.header:hover {
+  background-color: #007bff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #512da8;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.portfolio-header span {
+  flex: 1;
+  text-align: center;
+}
+
+.portfolio-item {
+  background-color: white;
+  border: 1px solid #512da8;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.portfolio-item:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.02);
+}
+
+.portfolio-item span {
+  flex: 1;
+  text-align: center;
+}
+
+.portfolio-value {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.value-box {
+  background-color: #e0f7fa;
+  border: 1px solid #512da8;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.value-box p {
+  font-size: 18px;
+  margin: 0;
+  color: #512da8;
+}
+
+.value-box span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #512da8;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #512da8;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #512da8;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #007bff;
+}
+
+.stock-details {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.stock-details h2 {
+  color: #512da8;
+}
+
+.stock-details button {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.stock-details button.buy {
+  background-color: #28a745;
+  color: white;
+}
+
+.stock-details button.sell {
+  background-color: #dc3545;
+  color: white;
+}
+
+.stock-details button:hover {
+  opacity: 0.8;
+}

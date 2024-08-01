@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stock Data</title>
+</head>
+
+<body>
+    <h1>Fetch Stock Data</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="ticker_symbol">Ticker Symbol:</label>
+        <input type="text" id="ticker_symbol" name="ticker_symbol" value="{{ ticker_symbol|default_if_none:'AAPL' }}">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if pe_ratio or beta or market_cap %}
+    <h2>Financial Data for {{ ticker_symbol }}</h2>
+    <p><strong>P/E Ratio:</strong> {{ pe_ratio }}</p>
+    <p><strong>Beta:</strong> {{ beta }}</p>
+    <p><strong>Market Cap:</strong> {{ market_cap }}</p>
+    <p><strong>Current Price</strong> {{ currentPrice }}</p>
+    <p><strong>Previous Close:</strong> {{ previousClose }}</p>
+    <p><strong>Open:</strong> {{ open }}</p>
+    <p><strong>Day High:</strong> {{ dayHigh }}</p>
+    <p><strong>Day Low:</strong> {{ dayLow }}</p>
+    {% endif %}
+
+    {% if financials %}
+    <h3>Financials:</h3>
+    <div>{{ financials|safe }}</div>
+    {% endif %}
+
+    {% if balance_sheet %}
+    <h3>Balance Sheet:</h3>
+    <div>{{ balance_sheet|safe }}</div>
+    {% endif %}
+
+    {% if cashflow %}
+    <h3>Cash Flow:</h3>
+    <div>{{ cashflow|safe }}</div>
+    {% endif %}
+
+    {% if earnings %}
+    <h3>Earnings:</h3>
+    <div>{{ earnings|safe }}</div>
+    {% endif %}
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data and Chart</title>
+</head>
+
+<body>
+    <h1>Stock Data</h1>
+
+    <!-- Form for financial data -->
+    <form method="post" action="{% url 'financials' %}">
+        {% csrf_token %}
+        <label for="ticker_symbol">Ticker Symbol:</label>
+        <input type="text" id="ticker_symbol" name="ticker_symbol" value="{{ ticker_symbol|default_if_none:'AAPL' }}">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Chart for Historical Data -->
+    <h2>Stock Price Chart</h2>
+    <img src="{{ chart_image }}" alt="Stock Price Chart">
+
+    <!-- Display Financial Data -->
+    {% if pe_ratio or beta or market_cap %}
+    <h2>Financial Data for {{ ticker_symbol }}</h2>
+    <p><strong>P/E Ratio:</strong> {{ pe_ratio }}</p>
+    <p><strong>Beta:</strong> {{ beta }}</p>
+    <p><strong>Market Cap:</strong> {{ market_cap }}</p>
+    <p><strong>Current Price:</strong> {{ currentPrice }}</p>
+    <p><strong>Previous Close:</strong> {{ previousClose }}</p>
+    <p><strong>Open:</strong> {{ open }}</p>
+    <p><strong>Day High:</strong> {{ dayHigh }}</p>
+    <p><strong>Day Low:</strong> {{ dayLow }}</p>
+    {% endif %}
+
+    {% if financials %}
+    <h3>Financials:</h3>
+    <div>{{ financials|safe }}</div>
+    {% endif %}
+
+    {% if balance_sheet %}
+    <h3>Balance Sheet:</h3>
+    <div>{{ balance_sheet|safe }}</div>
+    {% endif %}
+
+    {% if cashflow %}
+    <h3>Cash Flow:</h3>
+    <div>{{ cashflow|safe }}</div>
+    {% endif %}
+
+    {% if earnings %}
+    <h3>Earnings:</h3>
+    <div>{{ earnings|safe }}</div>
+    {% endif %}
+
+
+</body>
+
+</html>

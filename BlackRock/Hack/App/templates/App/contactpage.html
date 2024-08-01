@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="\static\css\contactStyle.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+        <button class="faq-question">
+          What types of financial services do you offer?
+        </button>
+        <div class="faq-answer">
+          <p>
+            We offer a range of financial services, including investment
+            management, financial planning, tax services, and retirement
+            planning. Our team works with individuals and businesses to tailor
+            solutions to meet specific financial goals.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">How can I open a new account?</button>
+        <div class="faq-answer">
+          <p>
+            You can open a new account by visiting our website and clicking on
+            the "Open Account" button. You will need to provide some personal
+            information and complete the verification process. For assistance,
+            feel free to contact our support team.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">
+          What are the fees for managing an investment portfolio?
+        </button>
+        <div class="faq-answer">
+          <p>
+            Our fees for managing investment portfolios vary based on the size
+            and complexity of the portfolio. We offer competitive pricing with
+            a transparent fee structure. Please contact our advisors for a
+            detailed fee schedule tailored to your needs.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">
+          How can I access my account statements?
+        </button>
+        <div class="faq-answer">
+          <p>
+            You can access your account statements by logging into your
+            account on our website. Statements are available for download in
+            PDF format. If you need assistance, please reach out to our
+            customer service team.
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="faq-question">
+          What should I do if I suspect fraudulent activity on my account?
+        </button>
+        <div class="faq-answer">
+          <p>
+            If you suspect fraudulent activity on your account, please contact
+            our customer service team immediately. We will investigate the
+            issue and take necessary actions to secure your account. Ensure
+            that you regularly update your passwords and enable two-factor
+            authentication.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Query Form Section -->
+    <section class="query-form-section">
+      <h2>Send Us a Query</h2>
+      <form id="query-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="form-message" class="form-message"></div>
+    </section>
+  </div>
+
+  <script src="\static\js\contactScript.js"></script>
+</body>
+
+</html>

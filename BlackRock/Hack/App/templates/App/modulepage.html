@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Foresight</title>
+  <link rel="stylesheet" href="/static/css/moduleStyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="/static/images/logo.png" alt="Logo" />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="{% url 'homepage1' %}">HOME</a></li>
+          <li><a href="#">MOCKSTOCK</a></li>
+          <li><a href="{% url 'financials' %}">ANALYSIS</a></li>
+          <li><a href="{% url 'contactus' %}">CONTACT US</a></li>
+        </ul>
+      </nav>
+      <div class="profile-container">
+        <button class="profile-button" onclick="toggleProfileMenu()">
+          <span class="profile-name">{{first_name}} {{last_name}}</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <ul>
+            <li><a href="#">CHANGE PASSWORD</a></li>
+            <li><a href="#">SETTINGS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h1 class="title">Module 1. Introduction to Stock Markets</h1>
+      <h2 class="subtitle">1. The Need to Invest</h2>
+      <div class="content">
+        <h3>1.1 – Why should I invest?</h3>
+        <p>
+          Before we address the above question, let us understand what would
+          happen if one chooses not to invest. Assume you earn Rs.50,000/- per
+          month, and you spend Rs.30,000/- towards your day-to-day living;
+          this can include expenses like housing, food, transport, shopping,
+          medical, etc. The balance of Rs.20,000/- is your monthly surplus.
+        </p>
+        <p>
+          For the sake of simplicity, let us ignore the tax effect in this
+          discussion.
+        </p>
+        <p>
+          To drive the point across, let us make a few simple assumptions:
+        </p>
+        <ul>
+          <li>
+            The employer is kind enough to give you a 10% salary hike every
+            year.
+          </li>
+          <li>The cost of living is likely to go up by 8% yearly.</li>
+          <li>
+            You are 30 years old and plan to retire at 50, this translates to
+            20 working years.
+          </li>
+          <li>You don’t intend to work after you retire.</li>
+          <li>
+            Your expenses are fixed, and you don’t foresee any other expenses.
+          </li>
+          <li>
+            The balance cash of Rs.20,000/- per month is retained as hard
+            cash.
+          </li>
+        </ul>
+      </div>
+
+      <!-- New Content Added Below -->
+      <div class="content">
+        <p>
+          If one were to analyze these numbers, one would soon realize this is
+          a scary situation. A few things are quite obvious –
+        </p>
+        <ul>
+          <li>After 20 years of hard work, you have accumulated Rs.1.7Cr.</li>
+          <li>
+            Since your expenses are fixed, your lifestyle has not changed over
+            the years, and you probably even suppressed your lifelong
+            aspirations – a better home, car, vacations, etc.
+          </li>
+          <li>
+            After you retire, assuming the expenses will continue to grow at
+            8%, the retirement corpus of Rs.1.7Cr is good enough to sail you
+            through roughly 8 years of post-retirement life. 8th year onwards,
+            you will be in a tight spot with literally no savings left to back
+            you up.
+          </li>
+        </ul>
+        <p>
+          What would you do after you run out of money in 8 years? How do you
+          fund your life? Is there a way to ensure that you collect a more
+          considerable sum at the end of 20 years?
+        </p>
+        <p>
+          At this point, you may think that the assumptions are simple and
+          that real life does not work like this. I agree, and I won’t dispute
+          that fact. However, the point to note in the above calculation is
+          that no investments are made, hence the cash retained has a flat or
+          zero growth.
+        </p>
+        <p>
+          Let’s consider another scenario where instead of keeping the cash
+          idle, you choose to invest the cash in an investment option that
+          grows at, let’s say, 12% per annum. For example – in the first year,
+          you retained Rs.240,000/- which, when invested at 12% per annum for
+          20 years (19 years assuming you invest at the end of 1st year),
+          yields Rs.2,067,063/- at the end of the 20th year. For those
+          interested in math, here is how that works –
+        </p>
+        <p>= 240000*(1+12%)^(19)</p>
+        <p>= 2,067,063</p>
+        <p>
+          Don't worry about the math at this point. We will explain that later
+          in this module (and several other modules in Varsity). Here is how
+          the table looks if you choose to invest.
+        </p>
+      </div>
+      <!-- End of New Content -->
+
+      <!-- Additional New Content -->
+      <div class="content">
+        <p>
+          Your cash balance has increased significantly with the decision to
+          invest surplus cash. The cash balance has grown to Rs.4.26Crs from
+          Rs.1.7Crs, a staggering 2.4x more than earlier (when you choose not
+          to invest). Clearly, with the decision to invest, you are in a much
+          better situation to deal with your post-retirement life.
+        </p>
+        <p>
+          Now, going back to the initial question of why invest? There are a
+          few compelling reasons –
+        </p>
+        <ul>
+          <li>
+            <strong>Fight Inflation</strong> – By investing, one can deal
+            better with the inevitable reality of life – the growing cost of
+            living – generally referred to as Inflation.
+          </li>
+          <li>
+            <strong>Create Wealth</strong> – By investing, one can build a
+            bigger corpus by the end of the target period. In the above
+            example, the period was up to retirement, but it can be anything –
+            children’s education, marriage, house purchase, retirement
+            holidays, etc.
+          </li>
+          <li>
+            <strong>Better life</strong> – To meet life’s financial
+            aspirations.
+          </li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h3>1.2 – Where to invest?</h3>
+        <p>
+          Having figured out the reasons to invest, the next obvious question
+          is – where would one invest, and what return can one expect with
+          investing? When investing, one has to choose an asset class that
+          suits the individual’s risk and returns profile. For example, one
+          individual will be open to taking a lot of risk with his or her
+          money, while another may want to take moderate risk, while another
+          would want zero risk.
+        </p>
+        <p>
+          Think of an asset class as an investment vehicle defined by its risk
+          and return characteristics. The following are some of the popular
+          asset classes.
+        </p>
+        <ul>
+          <li>Fixed income instruments</li>
+          <li>Equity</li>
+          <li>Real estate</li>
+          <li>Commodities (precious metals)</li>
+        </ul>
+      </div>
+      <!-- End of Additional New Content -->
+
+      <!-- New Section: 1.3 – Things to note before investing -->
+      <div class="content">
+        <h3>1.3 – Things to note before investing</h3>
+        <p>
+          Investing is an integral part of financial planning, but before you
+          start your investment journey, it is good to be aware of the
+          following –
+        </p>
+        <ul>
+          <li>
+            <strong>Risk and Return</strong> go hand in hand. Higher the risk,
+            the higher the return. The lower the risk, the lower the return.
+          </li>
+          <li>
+            Investment in <strong>fixed income</strong> is a good option if
+            you want to protect your principal amount. It is relatively less
+            risky. However, you have the risk of losing money when you adjust
+            the inflation return. Example – A fixed deposit that gives you 9%
+            when the inflation is 10% means you lose a net of 1% per annum.
+            Alternatively, the risk increases if you invest in a corporate
+            fixed-income instrument.
+          </li>
+          <li>
+            Investment in <strong>Equities</strong> is a great option. It is
+            known to beat inflation over a long period. Historically equity
+            investment has generated returns close to 14-15%. However, equity
+            investments can be risky.
+          </li>
+          <li>
+            <strong>Real Estate</strong> investment requires a significant
+            outlay of cash and cannot be done with smaller amounts. Liquidity
+            is another issue with real estate investment – you cannot buy or
+            sell whenever you want.
+          </li>
+          <li>
+            <strong>Gold and silver</strong> are relatively safer, but the
+            historical return on such investment has not been very
+            encouraging.
+          </li>
+        </ul>
+      </div>
+      <!-- End of New Section -->
+    </div>
+  </main>
+</body>
+
+</html>

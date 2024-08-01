@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Stock Trading Platform</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>My Portfolio</h1>
+    </div>
+    <div class="return flex flex-col items-center justify-center">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Stock Name</th>
+                    <th>Bought Price</th>
+                    <th>Current Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in portfolio1 %}
+                <tr>
+                    <td>{{ x.stock_name }}</td>
+                    <td>{{ x.bought_price }}</td>
+                    <td>{{ x.current_price }}</td>
+                    <td>{{ x.quantity}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for a stock...">
+        <button onclick="searchStock()">Search</button>
+    </div>
+    <div class="stock-details" id="stock-details"></div>
+    <script src="/static/js/scripts.js"></script>
+</body>
+
+</html>

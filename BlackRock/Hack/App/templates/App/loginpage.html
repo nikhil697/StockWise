@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/loginStyle.css">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <h1 style="margin-bottom: 20px;">Create Account</h1>
+                <input type="text" name="first-name" placeholder="First Name" required>
+                <input type="text" name="last-name" placeholder="Last Name" required>
+                <input type="tel" name="phone-number" placeholder="Phone Number" required>
+                <input type="email" name="email-address" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password (at least 8 characters)" required>
+                <input type="submit" class="btn" value="Sign Up" />
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form action="{% url 'homepage' %}" method="POST" class="inputs">
+                {% csrf_token %}
+                <h1 style="margin-bottom: 20px;">Sign In</h1>
+                <input type="text" name="uname" placeholder="Email" required />
+                <input type="password" name="psw" placeholder="Password" required />
+                <a style="text-decoration: underline;" href="{% url 'resetpass' %}">Change Password</a>
+                <input style="margin-top: 0;" type="submit" class="btn" value="Sign In" />
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Hello!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your credentials to use all of the site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/loginScript.js"></script>
+</body>
+
+</html>

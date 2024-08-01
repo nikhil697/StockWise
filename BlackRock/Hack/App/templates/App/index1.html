@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Insights</title>
+    <link rel="stylesheet" href="/static/css/styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ie3f5j5e2D9z1M4d5Vtn1Jf5jkz6x0xhP0" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="company-info">
+                <h1>Stock Data</h1>
+                <!-- Form for financial data -->
+                <form method="post" action="{% url 'financials' %}">
+                    {% csrf_token %}
+                    <label for="ticker_symbol">Ticker Symbol:</label>
+                    <input type="text" id="ticker_symbol" name="ticker_symbol"
+                        value="{{ ticker_symbol|default_if_none:'AAPL' }}">
+                    <button type="submit">Submit</button>
+                </form>
+                {% if ticker_symbol %}
+                <div>
+                    <h3>Stock Chart</h3>
+                    <img src="{{ chart_image }}" alt="Stock Chart">
+                </div>
+                {% endif %}
+
+                {% if pe_ratio or beta or market_cap %}
+                <p class="price">{{ currentPrice }} <span class="price-change">{{ percent|floatformat:2 }}%</span></p>
+                <p class="date">{{ current_date }}</p>
+                {% endif %}
+            </div>
+            <div class="actions">
+                <form action="{% url 'streamlit' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn">Indepth Analysis</button>
+                </form>
+
+                <!-- <button class="btn unfollow">Unfollow</button> -->
+            </div>
+        </header>
+        {% if pe_ratio or beta or market_cap %}
+        <section class="financial-info">
+            <div class="info-box">
+                <p>Market Cap</p>
+                <p>₹ {{ market_cap_cr|floatformat:2 }} Cr.</p>
+            </div>
+            <div class="info-box">
+                <p>Current Price</p>
+                <p>₹ {{ currentPrice }}</p>
+            </div>
+            <div class="info-box">
+                <p>Stock P/E</p>
+                <p>{{ pe_ratio|floatformat:2 }}</p>
+            </div>
+            <div class="info-box">
+                <p>Price To Book Ratio</p>
+                <p>{{ bookvalue|floatformat:2 }}</p>
+            </div>
+            <div class="info-box">
+                <p>Beta</p>
+                <p>{{ beta }}</p>
+            </div>
+            <div class="info-box">
+                <p>Ebitda</p>
+                <p>₹ {{ ebitda|floatformat:2 }} Cr.</p>
+            </div>
+            <div class="info-box">
+                <p>High / Low</p>
+                <p>₹ {{ dayHigh }} / {{ dayLow }}</p>
+            </div>
+            <div class="info-box">
+                <p>Dividend Yield</p>
+                <p>{{ dividendYield|floatformat:2 }}%</p>
+            </div>
+            <div class="info-box">
+                <p>Volume</p>
+                <p>{{ volume }}</p>
+            </div>
+        </section>
+        {% endif %}
+        <!-- <section class="chart">
+            <h2>Price Chart</h2>
+            <img src="{{ chart_image }}" alt="Chart">
+        </section> -->
+        <section>
+            {% if financials %}
+            <h3>Financials:</h3>
+            <div>{{ financials|safe }}</div>
+            {% endif %}
+            {% if balance_sheet %}
+            <h3>Balance Sheet:</h3>
+            <div>{{ balance_sheet|safe }}</div>
+            {% endif %}
+        </section>
+        <!-- <section class="pros-cons">
+            <div class="pros">
+                <h3>PROS</h3>
+                <p>{{ analysis }}</p>
+                <p>Debtor days have improved from 48.3 to 23.6 days.</p>
+            </div>
+            <div class="cons">
+                <h3>CONS</h3>
+                <p>Stock is trading at 4.21 times its book value</p>
+                <p>The company has delivered a poor sales growth of -0.50% over the past five years.</p>
+                <p>Company has a low return on equity of 8.03% over the last 3 years.</p>
+                <p>Company might be capitalizing the interest cost</p>
+            </div>
+        </section> -->
+    </div>
+    <script src="/static/js/scripts1.js"></script>
+</body>
+
+</html>

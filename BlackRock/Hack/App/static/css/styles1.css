@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.header .company-info {
+  text-align: left;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.header .price {
+  font-size: 24px;
+  color: green;
+}
+
+.header .price-change {
+  font-size: 16px;
+  color: #333;
+}
+
+.header .date {
+  font-size: 14px;
+  color: #666;
+}
+
+.header .links a {
+  color: #6a0dad;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.header .links span {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.actions .btn {
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.actions .btn.unfollow {
+  background-color: #d9534f;
+}
+
+.financial-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.info-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-box p {
+  margin: 5px 0;
+}
+
+.about,
+.key-points,
+.chart,
+.pros-cons {
+  margin: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.about h2,
+.key-points h2,
+.chart h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.about button {
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chart img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.pros-cons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pros,
+.cons {
+  flex: 0 0 48%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.pros h3,
+.cons h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+/* Add the existing styles here */
+
+/* Improved styles for the ticker symbol input and submit button */
+.header form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add space between the input and button */
+}
+
+.header label {
+  font-weight: 500;
+  margin-right: 10px;
+  color: #333;
+}
+
+.header input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  flex: 1; /* Allow the input to grow */
+  transition: border-color 0.3s;
+}
+
+.header input[type="text"]:focus {
+  border-color: #6a0dad;
+  outline: none;
+}
+
+.header button[type="submit"] {
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.header button[type="submit"]:hover {
+  background-color: #5a009e;
+}
+
+/* Additional button hover effects */
+.actions .btn:hover {
+  background-color: #5a009e;
+}
+
+.actions .btn.unfollow:hover {
+  background-color: #c9302c;
+}
+
+/* General Styles for Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Header Styling */
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Special Styling for Tables */
+.dataframe {
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
