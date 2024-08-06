@@ -3,4 +3,4 @@ streamlit
 Flask
 python-decouple
 Flask-SQLAlchemy
-mysqlclient
+PyMySQL
