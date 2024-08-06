@@ -146,7 +146,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     BASE_DIR / "App\static",
 # ]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/App/static'),
+    os.path.join(BASE_DIR, 'App/static'),
 ]
 
 import pymysql
