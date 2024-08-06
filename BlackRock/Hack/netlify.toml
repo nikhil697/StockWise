@@ -1,7 +1,8 @@
 [build]
   base = "/BlackRock/Hack"
   publish = ""
-  command = "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+  command = "pip install -r requirements.txt"
+# && python manage.py runserver collectstatic --noinput
 
 [build.environment]
   PYTHON_VERSION = "3.8"
