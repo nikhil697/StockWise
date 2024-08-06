@@ -14,7 +14,7 @@ import pandas as pd
 import io
 import urllib, base64
 from datetime import datetime
-import openai
+
 
 user1='admin'
 Password='nikhil2002'
