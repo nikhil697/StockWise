@@ -6,3 +6,4 @@ Flask-SQLAlchemy
 PyMySQL
 Flask-Login
 yahoo_fin
+mysql-connector-python
