@@ -1,6 +1,6 @@
 [build]
   base = "/BlackRock/Hack"
-  publish = "/BlackRock/Hack"
+  publish = ""
   command = "pip install -r requirements.txt && python manage.py collectstatic --noinput"
 
 [build.environment]
