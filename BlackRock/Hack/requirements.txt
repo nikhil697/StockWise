@@ -10,3 +10,4 @@ mysql-connector-python
 yfinance
 requests_html
 matplotlib
+transformers
