@@ -482,7 +482,7 @@ import yfinance as yf
 
     
     
-openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
+# openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
 # def viewvalues(request):
 #     context = {}
 
