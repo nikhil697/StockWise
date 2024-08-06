@@ -835,7 +835,7 @@ def streamlit_view(request):
 #         return HttpResponse(f"An error occurred: {str(e)}", status=500)
 
 def flask_proxy(request):
-    return redirect('http://127.0.0.1:5001/')
+    return redirect('http://127.0.0.1:5002/')
     
 
 
