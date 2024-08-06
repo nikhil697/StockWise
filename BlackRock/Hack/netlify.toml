@@ -1,0 +1,8 @@
+[build]
+  base = "/BlackRock/Hack"
+  publish = "/BlackRock/Hack"
+  command = "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
+
+[build.environment]
+  PYTHON_VERSION = "3.8"
+  DJANGO_SETTINGS_MODULE = "Hack.settings"
