@@ -74,13 +74,24 @@ WSGI_APPLICATION = 'Hack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blackrock',
+#         'USER': 'root',
+#         'PASSWORD': 'nikhil2002',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'blackrock',
-        'USER': 'root',
+        'USER': 'admin',
         'PASSWORD': 'nikhil2002',
-        'HOST': 'localhost',
+        'HOST': 'blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MockStock Trading Platform</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>MockStock Trading Platform</h1>
+            <form method="POST" action="/login">
+                <input type="text" name="username" placeholder="Username" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="new-user">
+                <h2>Create New User</h2>
+                <form id="new-user-form">
+                    <input type="text" id="new-username" placeholder="New Username" required>
+                    <button type="submit">Create User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="static/scripts.js"></script>
+</body>
+
+</html>

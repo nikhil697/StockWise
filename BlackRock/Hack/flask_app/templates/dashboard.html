@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MockStock Dashboard</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ username }}</h1>
+            <button id="logout-button">Logout</button>
+        </header>
+        <main>
+            <div class="portfolio-section">
+                <h2>Your Portfolio</h2>
+                <table id="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Stock Symbol</th>
+                            <th>Quantity</th>
+                            <th>Avg. Buy Price</th>
+                            <th>Current Price</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolio-body">
+                        <tr>
+                            <td colspan="5">Loading your portfolio...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="portfolio-summary">
+                    <p>Total Invested: <span id="total-invested">Loading...</span></p>
+                    <p>Total Current Value: <span id="total-current-value">Loading...</span></p>
+                    <p>Total Returns: <span id="total-returns">Loading...</span></p>
+                    <p>Percentage Gain: <span id="percentage-gain">Loading...</span></p>
+                    <!-- <p>1-Day Returns: <span id="one-day-returns">Loading...</span></p> -->
+                </div>
+            </div>
+            <div class="stock-section">
+                <h2>Trade Stocks</h2>
+                <div class="search-bar">
+                    <input type="text" id="stock-symbol" placeholder="Enter stock symbol">
+                    <button id="search-button">Search</button>
+                </div>
+                <div class="trade-options" id="trade-options" style="display: none;">
+                    <button id="buy-button">Buy Stock</button>
+                    <button id="sell-button">Sell Stock</button>
+                </div>
+                <div class="trade-form" id="trade-form" style="display: none;">
+                    <input type="number" id="quantity" placeholder="Enter quantity">
+                    <button id="confirm-buy-button" style="display: none;">Confirm Buy</button>
+                    <button id="confirm-sell-button" style="display: none;">Confirm Sell</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="static/scripts.js"></script>
+</body>
+
+</html>

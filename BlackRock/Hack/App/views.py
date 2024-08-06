@@ -16,6 +16,12 @@ import urllib, base64
 from datetime import datetime
 import openai
 
+user1='admin'
+Password='nikhil2002'
+host='blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com'
+database='blackrock'
+
+
 import yfinance as yf
 
 from django.http import JsonResponse
@@ -26,13 +32,13 @@ import json
 from transformers import GPTJForCausalLM, GPT2Tokenizer
 import requests
 
-conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='blackrock')
+conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
 
 def login_page(request):
     return render(request, 'App/loginpage.html')
 
 def register(request):
-    conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='blackrock')
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
     if request.method == "POST":
         first_name = request.POST.get('first-name')
         last_name = request.POST.get('last-name')
@@ -45,7 +51,7 @@ def register(request):
                     last_name=last_name,
                     phone_number=phone_number,
                     email_address=email_address,
-                    password=password)
+                    password=Password)
             Regis.full_clean()
             Regis.save()            
             print("Account saved successfully")
@@ -69,7 +75,7 @@ def register(request):
         return render(request, 'App/loginpage.html')
     
 # def homepage(request):
-#     conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='blackrock')
+#     conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
 
 #     if request.method== "POST":
 #         Email=request.POST.get("uname")
@@ -116,7 +122,7 @@ def register(request):
 #         return render(request, 'App/loginpage.html')
 
 def homepage(request):
-    conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='blackrock')
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
 
     if request.method == "POST":
         Email = request.POST.get("uname")
@@ -161,7 +167,7 @@ def homepage(request):
 
 
 def resetpass(request):
-    conne = mysql.connector.connect(user='root', password='nikhil2002', host='localhost', database='blackrock')
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
 
     if request.method == 'POST':
         email_address = request.POST.get('email')
@@ -190,12 +196,7 @@ def resetsuccess(request):
     return render(request, 'App/resetsuccess.html')
 
 def module(request):
-    conne = mysql.connector.connect(
-        user='root',
-        password='nikhil2002',
-        host='localhost',
-        database='blackrock'
-    )
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -238,12 +239,7 @@ def module(request):
     return render(request, 'App/modulepage.html', context)
 
 def contactus(request):
-    conne = mysql.connector.connect(
-        user='root',
-        password='nikhil2002',
-        host='localhost',
-        database='blackrock'
-    )
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -285,12 +281,7 @@ def contactus(request):
     return render(request,'App/contactpage.html')
 
 def homepage1(request):
-    conne = mysql.connector.connect(
-        user='root',
-        password='nikhil2002',
-        host='localhost',
-        database='blackrock'
-    )
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -491,6 +482,7 @@ import yfinance as yf
 
     
     
+openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
 # def viewvalues(request):
 #     context = {}
 
@@ -591,12 +583,7 @@ import yfinance as yf
 
 @csrf_exempt
 def viewvalues(request):
-    conne = mysql.connector.connect(
-        user='root',
-        password='nikhil2002',
-        host='localhost',
-        database='blackrock'
-    )
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -692,6 +679,9 @@ def viewvalues(request):
         prompt += f"Net Income: {company.info.get('netIncomeToCommon', 'N/A')}\n"
         prompt += f"Dividend Yield: {dividendYield}\n"
 
+        # Define the Gemini API key and endpoint
+        # API_KEY = "AIzaSyDuu2hb3BjBYuPAAfSmBRQADGAceCPCKQY"
+        # url = f"https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key={API_KEY}"
 
         # payload = {
         #     "contents": [
@@ -755,12 +745,7 @@ def mockstock(request):
         return render(request, 'App/mockstock.html', context)
 
     try:
-        conne = mysql.connector.connect(
-            user='root',
-            password='nikhil2002',
-            host='localhost',
-            database='blackrock'
-        )
+        conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
         cursor = conne.cursor(dictionary=True)
 
         # Fetch user details
@@ -832,6 +817,25 @@ def streamlit_view(request):
         subprocess.Popen(['streamlit', 'run', 'E:\BlackRock\Hack\App\stock.py', '--', ticker_symbol])
     return render(request,'App/waiting.html')
 
+
+# def flask_proxy(request):
+#     try:
+#         # Start the Flask app
+#         process = subprocess.Popen(['python', 'flask_app/app.py'])
+
+#         # Wait for Flask app to start
+#         # time.sleep(5)  # Adjust the sleep time as needed
+
+#         # Make a request to the Flask app
+#         response = requests.get('http://127.0.0.1:5000/')
+
+#         return HttpResponse(response.content)
+
+#     except Exception as e:
+#         return HttpResponse(f"An error occurred: {str(e)}", status=500)
+
+def flask_proxy(request):
+    return redirect('http://127.0.0.1:5001/')
     
 
 
