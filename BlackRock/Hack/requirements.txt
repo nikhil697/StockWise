@@ -9,3 +9,4 @@ yahoo_fin
 mysql-connector-python
 yfinance
 requests_html
+matplotlib
