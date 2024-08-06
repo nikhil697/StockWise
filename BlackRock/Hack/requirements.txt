@@ -2,5 +2,5 @@ Django>=3.2,<4.0
 streamlit
 Flask
 python-decouple
-mysqlclient
+mysqlclient==2.2.4
 Flask-SQLAlchemy
