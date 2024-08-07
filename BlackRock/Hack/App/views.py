@@ -814,7 +814,7 @@ def streamlit_view(request):
     # Redirect the user to the Streamlit app
     ticker_symbol = request.session.get('ticker_symbol', 'AAPL')
     if ticker_symbol:
-        subprocess.Popen(['streamlit', 'run', 'E:\BlackRock\Hack\App\stock.py', '--', ticker_symbol])
+        subprocess.Popen(['streamlit', 'run', '/Hack/App/stock.py', '--', ticker_symbol])
     return render(request,'App/waiting.html')
 
 
