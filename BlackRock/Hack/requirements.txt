@@ -11,3 +11,5 @@ yfinance
 requests_html
 matplotlib
 transformers
+webbrowser
+pandas_ta
