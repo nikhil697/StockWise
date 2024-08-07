@@ -6,3 +6,6 @@
 [build.environment]
   PYTHON_VERSION = "3.8"
   DJANGO_SETTINGS_MODULE = "Hack.settings"
+
+[functions]
+directory = "functions"
