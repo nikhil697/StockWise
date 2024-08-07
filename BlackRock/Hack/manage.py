@@ -17,7 +17,7 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     
-    # subprocess.Popen(['python', 'flask_app/app.py'])
+    subprocess.Popen(['python', 'flask_app/app.py'])
     execute_from_command_line(sys.argv)
 
 
