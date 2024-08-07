@@ -14,6 +14,7 @@ import pandas as pd
 import io
 import urllib, base64
 from datetime import datetime
+import os
 
 
 user1='admin'
@@ -811,10 +812,15 @@ def get_stock_price(request):
         return JsonResponse({'error': 'Unable to fetch stock price'}, status=400)
     
 def streamlit_view(request):
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the relative path to stock.py
+    stock_py_path = os.path.join(script_dir, 'Hack', 'App', 'stock.py')
     # Redirect the user to the Streamlit app
     ticker_symbol = request.session.get('ticker_symbol', 'AAPL')
     if ticker_symbol:
-        subprocess.Popen(['streamlit', 'run', 'BlackRock/Hack/App/stock.py', '--', ticker_symbol])
+        subprocess.Popen(['streamlit', 'run', stock_py_path, '--', ticker_symbol])
     return render(request,'App/waiting.html')
 
 
