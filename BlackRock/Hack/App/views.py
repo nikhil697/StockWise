@@ -816,7 +816,7 @@ def streamlit_view(request):
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the relative path to stock.py
-    stock_py_path = os.path.join(script_dir, 'Hack', 'App', 'stock.py')
+    stock_py_path = os.path.join(script_dir,'stock.py')
     # Redirect the user to the Streamlit app
     ticker_symbol = request.session.get('ticker_symbol', 'AAPL')
     if ticker_symbol:
