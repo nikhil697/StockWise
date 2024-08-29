@@ -14,14 +14,12 @@ import pandas as pd
 import io
 import urllib, base64
 from datetime import datetime
-import os,time
-import webbrowser
-
-
+import openai
 
 user1='admin'
 Password='nikhil2002'
 host='blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com'
+# host="localhost"
 database='blackrock'
 
 
@@ -47,14 +45,14 @@ def register(request):
         last_name = request.POST.get('last-name')
         phone_number = request.POST.get('phone-number')
         email_address = request.POST.get('email-address')
-        password = request.POST.get('password')
+        password1 = request.POST.get('password')
         
         try:
             Regis = credent(first_name=first_name,
                     last_name=last_name,
                     phone_number=phone_number,
                     email_address=email_address,
-                    password=Password)
+                    password=password1)
             Regis.full_clean()
             Regis.save()            
             print("Account saved successfully")
@@ -485,7 +483,7 @@ import yfinance as yf
 
     
     
-# openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
+openai.api_key = 'sk-proj-nwHW8ggzQOxOvrs2rGSlT3BlbkFJfzT4m3jRS2jmlKXm7ptn'
 # def viewvalues(request):
 #     context = {}
 
@@ -814,30 +812,11 @@ def get_stock_price(request):
         return JsonResponse({'error': 'Unable to fetch stock price'}, status=400)
     
 def streamlit_view(request):
-    # Get the current script's directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # Construct the relative path to stock.py
-    stock_py_path = os.path.join(script_dir, 'stock.py')
-
-    # Get the ticker symbol from the session or use a default
+    # Redirect the user to the Streamlit app
     ticker_symbol = request.session.get('ticker_symbol', 'AAPL')
-    
     if ticker_symbol:
-        # Run the Streamlit app with the ticker symbol as an argument
-        process = subprocess.Popen([
-            'streamlit', 'run', stock_py_path, '--server.port', '8501', 
-            '--server.address', '0.0.0.0', '--', ticker_symbol
-        ])
-
-        # Wait for a few seconds to allow the Streamlit server to start
-        time.sleep(5)
-
-        # Open the Streamlit app in the default web browser
-        webbrowser.open('http://65.0.12.131:8501', new=2)
-
-    # Render a waiting page
-    return render(request, 'App/waiting.html')
+        subprocess.Popen(['streamlit', 'run', 'E:\BlackRock\Hack\App\stock.py', '--', ticker_symbol])
+    return render(request,'App/waiting.html')
 
 
 # def flask_proxy(request):
@@ -857,7 +836,7 @@ def streamlit_view(request):
 #         return HttpResponse(f"An error occurred: {str(e)}", status=500)
 
 def flask_proxy(request):
-    return redirect('http://127.0.0.1:5002/')
+    return redirect('http://127.0.0.1:5001/')
     
 
 
